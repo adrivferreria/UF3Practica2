@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Practica2">
+  <ClassDiagramComponents>
+    <Class name="Biblioteca" package="" visibility="public" xPosition="471.0" yPosition="416.0">
+      <Fields>
+        <Field name="copiaLlibres" type="List&lt;Copia&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Llibre" package="" visibility="public" xPosition="120.0" yPosition="148.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="tipus" type="String" visibility="private"/>
+        <Field name="editorial" type="int" visibility="private"/>
+        <Field name="any" type="int" visibility="private"/>
+        <Field name="autor" type="Autor" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Autor" package="" visibility="public" xPosition="481.0" yPosition="167.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="nacionalitat" type="String" visibility="private"/>
+        <Field name="naixement" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Copia" package="" visibility="public" xPosition="120.0" yPosition="407.0">
+      <Fields>
+        <Field name="identificador" type="int" visibility="private"/>
+        <Field name="estat" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Lector" package="" visibility="public" xPosition="120.0" yPosition="623.0">
+      <Fields>
+        <Field name="maxLlibres" type="int" visibility="private" isFinal="true"/>
+        <Field name="llibresPrestec" type="String[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Copia" target="Llibre"/>
+    <HasRelation name="te" source="Biblioteca" target="Copia" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="escriu" source="Autor" target="Llibre" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="te" source="Lector" target="Copia" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
